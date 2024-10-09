@@ -16,6 +16,11 @@ class TicTacToeEnv(gym.Env):
         return self.board.flatten()
 
     def step(self, action):
+        """
+        Hàm thực hiện bước đi với action cho trước 
+        """
+
+
         # kiểm tra trùng lặp 
         if self.board[action // self.size, action % self.size ] != 0 or self.done:
             return self.board.flatten(), -10, True, {}  
@@ -40,6 +45,9 @@ class TicTacToeEnv(gym.Env):
 
 
     def check_winner(self, player):
+        """
+        Kiểm tra người chơi player có thắng hay chưa 
+        """
         for i in range(self.size):
             if all([self.board[i, j] == player for j in range(self.size)]) or all([self.board[j, i] == player for j in range(self.size)]):
                 return True
