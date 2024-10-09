@@ -1,5 +1,5 @@
 
-# TicTactoe with Reinforcement Learning 
+# TicTacToe with Reinforcement Learning 
 
 In this repository, I will implement reinforcement learning algorithms through the Tic-Tac-Toe game. I will use the Gymnasium library to implement the algorithms and the environment for the game. The algorithms I implement are for learning purposes.
 
