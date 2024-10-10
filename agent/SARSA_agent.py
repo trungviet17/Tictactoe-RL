@@ -10,18 +10,26 @@ class SARSA_Agent:
         self.Q = {}  
 
     def get_Q(self, state, action):
-        """Lấy giá trị Q của một trạng thái và hành động."""
+        """
+        Lấy giá trị Q của một trạng thái và hành động
+        """
+
         return self.Q.get((tuple(state), action), 0)
 
     def choose_action(self, state):
-        """Chọn hành động theo epsilon-greedy."""
+        """
+        Chọn bước đi 
+        """
         if random.uniform(0, 1) < self.epsilon:
             return self.env.action_space.sample()
         else:
             return self.best_action(state)
 
     def best_action(self, state):
-        """Chọn hành động có giá trị Q cao nhất."""
+        """
+        Tìm hành động có Q cao nhất 
+        """
+
         actions = range(self.env.action_space.n)
         q_values = [self.get_Q(state, a) for a in actions]
         max_q = max(q_values)
@@ -29,12 +37,20 @@ class SARSA_Agent:
         return random.choice(best_actions)
 
     def update_Q(self, state, action, reward, next_state, next_action):
-        """Cập nhật giá trị Q-table."""
+        """
+        Cập nhật giá trị Q-table 
+        """
+
         current_q = self.get_Q(state, action)
         next_q = self.get_Q(next_state, next_action)
         self.Q[(tuple(state), action)] = current_q + self.alpha * (reward + self.gamma * next_q - current_q)
 
     def train(self, episodes=10000):
+
+        """
+        Huấn luyện ván đấu 
+        
+        """
         for episode in range(episodes):
             state = self.env.reset()
             action = self.choose_action(state)

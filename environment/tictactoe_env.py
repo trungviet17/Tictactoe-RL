@@ -11,6 +11,10 @@ class TicTacToeEnv(gym.Env):
         self.reset()
 
     def reset(self):
+        """
+        Reset lại ván đấu 
+        """
+
         self.board = np.zeros((self.size, self.size), dtype=np.int8) 
         self.done = False
         return self.board.flatten()
@@ -19,28 +23,24 @@ class TicTacToeEnv(gym.Env):
         """
         Hàm thực hiện bước đi với action cho trước 
         """
-
-
-        # kiểm tra trùng lặp 
+        
         if self.board[action // self.size, action % self.size ] != 0 or self.done:
             return self.board.flatten(), -10, True, {}  
 
         
         self.board[action // self.size, action % self.size] = 1  
 
-        # kiểm tra ngừoi chơi 1 có thắng 
         if self.check_winner(1):
-            return self.board.flatten(), 1, True, {}  # người chơi X thắng, +1 điểm
-
-        #
+            return self.board.flatten(), 1, True, {}  
         if not 0 in self.board.flatten():
-            return self.board.flatten(), 0, True, {}  # hòa
-        # lựa chọn bước đi ngẫu nhiên 
+            return self.board.flatten(), 0, True, {}  
+
+        # setup cho ngừoi chơi đối thủ  
         opponent_action = np.random.choice(np.where(self.board.flatten() == 0)[0])
-        self.board[opponent_action // self.size, opponent_action % self.size] = 2  # người chơi O đi
+        self.board[opponent_action // self.size, opponent_action % self.size] = 2  
 
         if self.check_winner(2):
-            return self.board.flatten(), -1, True, {} # thua trừ 2 
+            return self.board.flatten(), -1, True, {}
         return self.board.flatten(), 0, False, {}
 
 

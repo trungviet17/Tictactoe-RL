@@ -31,12 +31,14 @@ for a little demo
 
 ## Table of Content 
 
-| Algorithm                  | Description                               | Status                | Link to Code                      |
+| Algorithm                  | Blog                              | Status                | Link to Code                      |
 |----------------------------|-------------------------------------------|-----------------------|------------------------------------|
-| Q-learning                  | Basic reinforcement learning algorithm    | ❌ Not Implemented | [Q-learning Implementation](./path/to/q_learning.py) |
-| SARSA                       | On-policy temporal difference algorithm   | ⚙️ In Progress          | [SARSA Implementation](./path/to/sarsa.py)           |
-| Deep Q-Network (DQN)        | Neural network-based Q-learning algorithm |❌ Not Implemented        | [DQN Implementation](./path/to/dqn.py)               |
-| Tic-Tac-Toe Game Environment| Custom environment using Gymnasium        | ✅ Implemented         | [Environment Code](./path/to/environment.py)          |
+| Q-learning                  | None    | ❌ Not Implemented | [Q-learning Implementation](./path/to/q_learning.py) |
+| SARSA                       | None   | ✅ Implemented           | [SARSA Implementation](agent/SARSA_agent.py)           |
+| Deep Q-Network (DQN)        | None |❌ Not Implemented        | [DQN Implementation](./path/to/dqn.py)               |
+| Tic-Tac-Toe Game Environment| None        | ✅ Implemented         | [Environment Code](environment/tictactoe_env.py)          |
+| Policy Iteration | None        |  ⚙️ In Progress          | [Policy Iteration Code]()      | 
+| Value Iteration| None        |  ⚙️ In Progress          | [Value Iteration Code]()          |
 
 
 
@@ -48,10 +50,9 @@ for a little demo
 
 ## Authors
 
- <table>
+<table>
 <tr>
-<td valign="top" width="14.28%"><a href="https://github.com/trungviet17"><img src="https://avatars.githubusercontent.com/u/113108053?v=4" width="100px;" /><br /><sub><b>Nguyễn Ngô Việt Trung</b></sub></a><br/></td>
-
+  <td  valign="top" width="14.28%"><a href="https://github.com/trungviet17"><img src="https://avatars.githubusercontent.com/u/113108053?v=4" width="100px;" /><br /><sub><b>Nguyễn Ngô Việt Trung</b></sub></a><br/></td>
 </tr>
 </table>
 
